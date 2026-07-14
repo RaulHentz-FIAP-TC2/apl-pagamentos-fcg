@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>FcgPagamentos.Application</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FcgPagamentos.Domain\FcgPagamentos.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Apenas as abstrações de logging (sem dependência de provider concreto),
+         mantendo a Application livre de acoplamento com infraestrutura. -->
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
+  </ItemGroup>
+
+</Project>

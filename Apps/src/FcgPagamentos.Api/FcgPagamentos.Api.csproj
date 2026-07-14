@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>FcgPagamentos.Api</RootNamespace>
+    <UserSecretsId>fcg-pagamentos-api</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Domain removido: a Api não deve depender diretamente do Domain (ver TC2-P2-018).
+         Application e Infrastructure já reexportam o que a Api precisa via DI. -->
+    <ProjectReference Include="..\FcgPagamentos.Application\FcgPagamentos.Application.csproj" />
+    <ProjectReference Include="..\FcgPagamentos.Infrastructure\FcgPagamentos.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="AspNetCore.HealthChecks.MongoDb" Version="8.0.1" />
+    <PackageReference Include="AspNetCore.HealthChecks.Rabbitmq" Version="8.0.2" />
+    <PackageReference Include="MongoDB.Driver" Version="2.22.0" />
+  </ItemGroup>
+
+</Project>
