@@ -21,6 +21,7 @@ public class Pagamento
 
     private Pagamento(Guid pedidoId, string usuarioId, string jogoId, decimal valor, StatusPagamento status)
     {
+        Id = Guid.NewGuid().ToString();
         PedidoId = pedidoId;
         UsuarioId = usuarioId;
         JogoId = jogoId;
